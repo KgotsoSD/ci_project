@@ -35,7 +35,7 @@ class Site extends CI_Controller
                     
 
                 );
-                $this->db->insert('users',$data);
+                $this->db->insert('user',$data);
                 $this->session->set_flashdata("Success"." Your account has been registered. You can login now");
                 redirect("Site/Register","refresh ");
 
@@ -46,6 +46,9 @@ class Site extends CI_Controller
         $this->load->view("register");
         
     }
+
+   
+
 
 }
 ?>

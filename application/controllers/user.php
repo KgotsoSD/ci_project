@@ -4,6 +4,7 @@ class User extends CI_Controller
 {
     public function __construct()
     {
+        parent::__construct();
         if(isset($_SESSION['user_logged']))
         {
             $this->session->set_flashdata("error","Please login first to view this page!!");
@@ -13,7 +14,10 @@ class User extends CI_Controller
     }
     public function person()
     {
-        $this->load->view("login");
+        $this->load->view("person");
+
+
+
         
     }
 }
