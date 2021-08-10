@@ -5,8 +5,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <link href="<?php echo base_url(); ?>Assets/css" rel="stylesheet">
+   <link href="<?php echo base_url(); ?>Assets/css/bootstrap.min.css" rel="stylesheet">
    <link href="<?php echo base_url(); ?>Assets/js" rel="stylesheet">
+  
+<script src="Assets/js/bootstrap.bundle.js"></script>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 form {border: 3px solid #f1f1f1;}
@@ -76,36 +78,55 @@ span.psw {
 
 
 
-<form action="<?= base_url(); ?>Site/register" method= "$_POST">
+
   <div class="container">
-    <h1>Register</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr>
+     <h1>Register</h1>
+      <p>Please fill in this form to create an account.</p>
+     <hr>
 
-    <label for="Name"><b>Name</b></label>
-    <input type="text" placeholder="Enter Name" name="name" id="name" required>
+     <?php if(isset($_SESSION['success'])) { ?>
+      
+      <div class="alert alert-success">  <?php echo $_SESSION['success']; ?></div>
+  <?php }
+  ?>
 
-    <label for="Surname"><b>Surname</b></label>
-    <input type="text" placeholder="Enter Surname" name="surname" id="surname" required>
+     <?php echo validation_errors('<div class="alert alert-danger">','</div');  ?>
+     <form action="<?= base_url(); ?>Site/register" method= "POST">
 
-
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
-
-    <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="username" id="username" required>
+    <div class="col-lg-8 col-lg-offset-2">
 
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+        <label for="Name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="name" id="name" required>
+
+        <label for="Surname"><b>Surname</b></label>
+        <input type="text" placeholder="Enter Surname" name="surname" id="surname" required>
+
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" id="username" required>
+
+        <label for="phone"><b>Phone</b></label>
+        <input type="text" placeholder="Enter Phone No" name="phone" id="phone" required>
+
+        <label for="gender">Gender<b></label><br>
+        <input type="radio" name="gender" value="male"> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+        <input type="radio" name="gender" value="other"> Other<br>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
     
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-    <hr>
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+     <hr>
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
 
-    <button type="submit" class="registerbtn">Register</button>
+     <button type="submit" class="registerbtn">Register</button>
   </div>
   
   <div class="container signin">
@@ -113,14 +134,13 @@ span.psw {
   </div>
 </form>
 
-      <?php if(isset($_SESSION['success'])) { ?>
-      
-         <div class="alert alert-success">  <?php echo $_SESSION['success ']; ?></div>
-     <?php }
-     ?>
+    
     
      <!--  -->
       </div>
+    </div>
+
+    
 
 
 
