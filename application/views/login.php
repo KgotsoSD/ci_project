@@ -72,10 +72,12 @@ span.psw {
 </head>
 <body>
 
-<h2>Login Form</h2>
+<h1>Login Form</h1>
+<p>Please fill in the login form to log into your account.</p>
 
 <form action="<?= base_url(); ?>Site/login" method= "$_POST">
-  <div class="imgcontainer">
+ 
+<div class="imgcontainer">
     <!--<img src="Assets/pic.png" alt="Avatar" class="avatar">  -->
   </div>
 

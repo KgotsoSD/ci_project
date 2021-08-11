@@ -1,88 +1,22 @@
 <?php
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
    <link href="<?php echo base_url(); ?>Assets/css/bootstrap.min.css" rel="stylesheet">
    <link href="<?php echo base_url(); ?>Assets/js" rel="stylesheet">
-  
-<script src="Assets/js/bootstrap.bundle.js"></script>
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #f1f1f1;}
 
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-.container {
-  padding: 16px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
-</style>
-
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
 </head>
 
 
 
-
-  <div class="container">
-     <h1>Register</h1>
+<h1>Register Page</h1>
       <p>Please fill in this form to create an account.</p>
-     <hr>
+     
 
      <?php if(isset($_SESSION['success'])) { ?>
       
@@ -90,10 +24,47 @@ span.psw {
   <?php }
   ?>
 
-     <?php echo validation_errors('<div class="alert alert-danger">','</div');  ?>
+     <?php echo validation_errors('<div class="alert alert-danger">','</div>');  ?>
      <form action="<?= base_url(); ?>Site/register" method= "POST">
 
-    <div class="col-lg-8 col-lg-offset-2">
+
+  <div class="col-lg-5 col-lg-offset-2">
+        <div class="form-group">
+          <label for="username" >Username</label>
+          <input class="form-control" name="username" id="username" type="text">
+        </div>
+     
+        <div class="form-group">
+          <label for="email" >Email</label>
+          <input class="form-control" name="email" id="email" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="password" >Password</label>
+          <input class="form-control" name="password" id="password"  type="password">
+        </div>
+     
+        <div class="form-group">
+          <label for="password" >Confirm Password</label>
+          <input class="form-control" name="password" id="password"   type="password">
+       </div>
+    <div class="form-group">
+  <label for="gender">Gender</label><br>
+        <input type="radio" name="gender" value="male"> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+        <input type="radio" name="gender" value="other"> Other<br>
+  </div>
+  <div class="form-group">
+      <label for="phone" class="label-default">Phone</label>
+      <input class="form-control" name="phone" id="phone"   type="phone">
+  </div>
+
+  <div class="text-center">
+    <button class="btn btn-primary">Register</button>
+  </div>
+
+   
+    <!--<div class="col-lg-8 col-lg-offset-2">
 
 
         <label for="Name"><b>Name</b></label>
@@ -133,6 +104,7 @@ span.psw {
     <p>Already have an account? <a href="#">Sign in</a>.</p>
   </div>
 </form>
+     -->
 
     
     
@@ -142,7 +114,7 @@ span.psw {
 
     
 
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="<?php echo base_url(); ?>Assets/js/bootstrap.min.css"></script>
 </body>
 </html>
